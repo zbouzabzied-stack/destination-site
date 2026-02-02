@@ -1,3 +1,32 @@
-<body style="background:#000; color:#0f0; display:flex; justify-content:center; align-items:center; height:100vh; font-family:monospace;">
-    <h1>[ نظام ستوشي: الكيان ب نشط ]</h1>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ستوشي | بدء القفزة</title>
+    <style>
+        body { background: #111; color: white; text-align: center; padding-top: 15%; font-family: 'Courier New', Courier, monospace; }
+        #timer { font-size: 100px; color: #ff0000; text-shadow: 0 0 20px #ff0000; }
+        .msg { font-size: 1.5rem; color: #aaa; }
+    </style>
+</head>
+<body>
+    <div id="timer">5</div>
+    <div class="msg">جاري تفعيل بروتوكول ستوشي... الانتقال للتردد الثاني</div>
+
+    <script>
+        // ااستبدل الرابط أدناه برابط الكيان ب الذي حصلت عليه من الحساب الثاني
+        const DESTINATION_URL = "ضع_رابط_الحساب_الثاني_هنا";
+
+        let timeLeft = 5;
+        const countdown = setInterval(() => {
+            timeLeft--;
+            document.getElementById('timer').textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                // تنفيذ القفزة الصامتة
+                window.location.replace(DESTINATION_URL);
+            }
+        }, 1000);
+    </script>
 </body>
+</html>
